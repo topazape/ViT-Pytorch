@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
-from encoder_block import EncoderBlock
-from input_layer import InputLayer
+from .input_layer import InputLayer
+from .encoder_block import EncoderBlock
 
 
 class ViT(nn.Module):

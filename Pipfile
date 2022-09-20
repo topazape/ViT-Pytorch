@@ -7,6 +7,7 @@ name = "pypi"
 scipy = "*"
 torch = {file = "https://download.pytorch.org/whl/cu116/torch-1.12.1%2Bcu116-cp310-cp310-linux_x86_64.whl"}
 torchvision = { file = "https://download.pytorch.org/whl/cu116/torchvision-0.13.1%2Bcu116-cp310-cp310-linux_x86_64.whl"}
+tqdm = "*"
 
 [dev-packages]
 pysen = "*"

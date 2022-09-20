@@ -51,6 +51,6 @@ class MultiHeadSelfAttention(nn.Module):
         # (B, nb_head, N, N) × (B, nb_head, N, D//nb_head) -> (B, nb_head, N, D//nb_head)
         out = attn @ v
         # (B, nb_head, N, D//nb_head) -> (B, N, nb_head, D//nb_head) -> (B, N, D)
-        out = out.transpose(1, 2).reshape(batch_size, nb_patch, self.embedded_dim)
+        out = out.transpose(1, 2).reshape(batch_size, nb_patch, self.embed_dim)
         out = self.w_o(out)
         return out
