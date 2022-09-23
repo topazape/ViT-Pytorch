@@ -8,6 +8,7 @@ from torch.utils.data import DataLoader
 
 @dataclass
 class ViTData:
+    name: str
     save_dir: str
 
     def __post_init__(self) -> None:
@@ -25,6 +26,16 @@ class ViTData:
                 transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5)),
             ]
         )
+
+    def create_dataloader(
+        self, batch_size: int, shuffle: bool
+    ) -> tuple[DataLoader, DataLoader]:
+        if self.name == "CIFAR10":
+            return self.create_CIFAR10_dataloader(
+                batch_size=batch_size, shuffle=shuffle
+            )
+        else:
+            raise NotImplementedError
 
     def create_CIFAR10_dataloader(
         self, batch_size: int, shuffle: bool
