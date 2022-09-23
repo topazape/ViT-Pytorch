@@ -52,3 +52,10 @@ learning_rate = 0.001
 
 # Result
 ViT is inherently accurate when pre-trained on large image data sets (like [JFT-300M](https://paperswithcode.com/dataset/jft-300m)), so simply training on CIFAR10, as in this code, does not reduce cross-entropy loss.
+```
+[2022-09-23 11:52:17] :vision_transformer.utils.logger: [INFO] loss: 2.0047439576718755
+[2022-09-23 11:52:38] :vision_transformer.utils.logger: [INFO] loss: 1.8455862294370755
+...
+[2022-09-23 11:58:37] :vision_transformer.utils.logger: [INFO] loss: 1.2203882005268012
+[2022-09-23 11:58:58] :vision_transformer.utils.logger: [INFO] loss: 1.2218489825915986
+```
