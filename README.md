@@ -59,4 +59,4 @@ ViT is inherently accurate when pre-trained on large image data sets (like [JFT-
 [2022-09-23 11:58:37] :vision_transformer.utils.logger: [INFO] loss: 1.2203882005268012
 [2022-09-23 11:58:58] :vision_transformer.utils.logger: [INFO] loss: 1.2218489825915986
 ```
-This same has been shown in [GMO experiments](https://recruit.gmo.jp/engineer/jisedai/blog/vision_transformer/).
+This same has been shown in [GMO experiment](https://recruit.gmo.jp/engineer/jisedai/blog/vision_transformer/).
