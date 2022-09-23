@@ -4,9 +4,7 @@ import torch.nn.functional as F
 
 
 class MultiHeadSelfAttention(nn.Module):
-    def __init__(
-        self, embed_dim: int = 384, nb_head: int = 3, dropout: float = 0.0
-    ) -> None:
+    def __init__(self, embed_dim: int, nb_head: int, dropout: float) -> None:
         super().__init__()
         self.nb_head = nb_head
         self.embed_dim = embed_dim

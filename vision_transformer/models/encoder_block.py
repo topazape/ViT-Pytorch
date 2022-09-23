@@ -6,11 +6,7 @@ from .multihead_attention import MultiHeadSelfAttention
 
 class EncoderBlock(nn.Module):
     def __init__(
-        self,
-        embed_dim: int = 384,
-        nb_head: int = 8,
-        hidden_dim: int = 384 * 4,
-        dropout: float = 0.0,
+        self, embed_dim: int, nb_head: int, hidden_dim: int, dropout: float
     ) -> None:
         super().__init__()
 

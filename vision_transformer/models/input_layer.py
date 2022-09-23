@@ -5,10 +5,10 @@ import torch.nn as nn
 class InputLayer(nn.Module):
     def __init__(
         self,
-        in_channels: int = 3,
-        embed_dim: int = 384,
-        patch_size: int = 16,
-        image_size: int = 32,
+        in_channels: int,
+        embed_dim: int,
+        patch_size: int,
+        image_size: int,
     ) -> None:
         super().__init__()
 

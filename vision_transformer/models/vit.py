@@ -8,15 +8,15 @@ from .input_layer import InputLayer
 class ViT(nn.Module):
     def __init__(
         self,
-        in_channels: int = 3,
-        num_classes: int = 10,
-        embed_dim: int = 384,
-        patch_size: int = 16,
-        image_size: int = 32,
-        num_blocks: int = 7,
-        nb_head: int = 8,
-        hidden_dim: int = 384 * 4,
-        dropout: float = 0.0,
+        in_channels: int,
+        num_classes: int,
+        embed_dim: int,
+        patch_size: int,
+        image_size: int,
+        num_blocks: int,
+        nb_head: int,
+        hidden_dim: int,
+        dropout: float,
     ) -> None:
         super().__init__()
         self.input_layer = InputLayer(
