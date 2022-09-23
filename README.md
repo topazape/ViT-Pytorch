@@ -27,23 +27,23 @@ Here shows a list of settings and what they mean.
 Parameters are based on the ViT experiment [conducted by GMO](https://recruit.gmo.jp/engineer/jisedai/blog/vision_transformer/).
 ```ini
 [dataset]
-dir = ./datasets			; training data save directory
-name = CIFAR10				; dataset name, only CIFAR10 is acceptable
-in_channels = 3				; number of channels
-image_size = 32				; image size; 32x32
-num_classes = 10			; 10 class classification
+dir = ./datasets	; training data save directory
+name = CIFAR10		; dataset name, only CIFAR10 is acceptable
+in_channels = 3		; number of channels
+image_size = 32		; image size; 32x32
+num_classes = 10	; 10 class classification
 
 [dataloader]
 batch_size = 32
 shuffle = true
 
 [model]
-patch_size = 4				; use 4 x 4 px for patch
-embed_dim = 256				; same meaning of dim=256 of `vit-pytorch`
-num_blocks = 3				; same meaning of depth=3 of `vit-pytorch`
-heads = 4					; number of multihead attention
-hidden_dim = 256			; same meaning of mlp_dim=256 of `vit-pytorch`
-dropout = 0.1				; dropout ratio
+patch_size = 4		; use 4 x 4 px for patch
+embed_dim = 256		; same meaning of dim=256 of `vit-pytorch`
+num_blocks = 3		; same meaning of depth=3 of `vit-pytorch`
+heads = 4			; number of multihead attention
+hidden_dim = 256	; same meaning of mlp_dim=256 of `vit-pytorch`
+dropout = 0.1		; dropout ratio
 
 [learning]
 epochs = 20
