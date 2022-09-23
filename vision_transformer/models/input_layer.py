@@ -7,20 +7,18 @@ class InputLayer(nn.Module):
         self,
         in_channels: int = 3,
         embed_dim: int = 384,
-        num_patch_row: int = 2,
+        patch_size: int = 16,
         image_size: int = 32,
     ) -> None:
         super().__init__()
 
         self.in_channels = in_channels
         self.embed_dim = embed_dim
-        self.num_patch_row = num_patch_row
+        self.patch_size = patch_size
         self.image_size = image_size
 
         # number of patches
-        self.nb_patch = self.num_patch_row * self.num_patch_row
-        # patch size
-        self.patch_size = int(self.image_size // self.num_patch_row)
+        self.nb_patch = (self.image_size // self.patch_size) ** 2
         # split into patches
         self.patch_embed_layer = nn.Conv2d(
             in_channels=self.in_channels,

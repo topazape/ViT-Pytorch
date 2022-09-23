@@ -1,7 +1,8 @@
 import torch
 import torch.nn as nn
-from .input_layer import InputLayer
+
 from .encoder_block import EncoderBlock
+from .input_layer import InputLayer
 
 
 class ViT(nn.Module):
@@ -10,7 +11,7 @@ class ViT(nn.Module):
         in_channels: int = 3,
         num_classes: int = 10,
         embed_dim: int = 384,
-        num_patch_row: int = 2,
+        patch_size: int = 16,
         image_size: int = 32,
         num_blocks: int = 7,
         nb_head: int = 8,
@@ -21,7 +22,7 @@ class ViT(nn.Module):
         self.input_layer = InputLayer(
             in_channels=in_channels,
             embed_dim=embed_dim,
-            num_patch_row=num_patch_row,
+            patch_size=patch_size,
             image_size=image_size,
         )
         self.encoder = nn.Sequential(
