@@ -1,5 +1,5 @@
 from pathlib import Path
-from typing import Optional
+from typing import Any
 
 import torch
 import torch.nn as nn
@@ -14,11 +14,11 @@ class Trainer:
         epochs: int,
         train_loader: DataLoader,
         valid_loader: DataLoader,
-        criterion,
-        optimizer,
-        device,
-        save_dir,
-    ):
+        criterion: Any,
+        optimizer: Any,
+        device: Any,
+        save_dir: str,
+    ) -> None:
         self.epochs = epochs
         self.train_loader, self.valid_loader = train_loader, valid_loader
         self.criterion = criterion
@@ -29,7 +29,7 @@ class Trainer:
         self.logger = get_logger(str(Path(self.save_dir).joinpath("log.txt")))
         self.best_loss = float("inf")
 
-    def fit(self, model: nn.Module):
+    def fit(self, model: nn.Module) -> None:
         for epoch in range(self.epochs):
             model.train()
             losses = AverageMeter("train_loss")
