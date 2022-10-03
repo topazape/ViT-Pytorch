@@ -52,6 +52,7 @@ class Trainer:
 
                     pbar.set_postfix(loss=losses.value)
 
+            self.logger.info(f"(train) epoch: {epoch} loss: {losses.avg}")
             self.evaluate(model, epoch)
 
     @torch.no_grad()
@@ -67,9 +68,9 @@ class Trainer:
             loss = self.criterion(out, va_y)
             losses.update(loss.item())
 
-        self.logger.info(f"loss: {losses.avg}")
+        if epoch:
+            self.logger.info(f"(valid) epoch: {epoch} loss: {losses.avg}")
 
-        if epoch is not None:
             if losses.avg <= self.best_loss:
                 self.best_acc = losses.avg
                 torch.save(model.state_dict(), Path(self.save_dir).joinpath("best.pth"))
