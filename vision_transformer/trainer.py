@@ -56,7 +56,7 @@ class Trainer:
             self.evaluate(model, epoch)
 
     @torch.no_grad()
-    def evaluate(self, model: nn.Module, epoch: Optional[int] = None) -> None:
+    def evaluate(self, model: nn.Module, epoch: int) -> None:
         model.eval()
         losses = AverageMeter("valid_loss")
 
@@ -68,9 +68,8 @@ class Trainer:
             loss = self.criterion(out, va_y)
             losses.update(loss.item())
 
-        if epoch:
-            self.logger.info(f"(valid) epoch: {epoch} loss: {losses.avg}")
+        self.logger.info(f"(valid) epoch: {epoch} loss: {losses.avg}")
 
-            if losses.avg <= self.best_loss:
-                self.best_acc = losses.avg
-                torch.save(model.state_dict(), Path(self.save_dir).joinpath("best.pth"))
+        if losses.avg <= self.best_loss:
+            self.best_acc = losses.avg
+            torch.save(model.state_dict(), Path(self.save_dir).joinpath("best.pth"))
