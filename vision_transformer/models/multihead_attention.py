@@ -19,9 +19,6 @@ class MultiHeadSelfAttention(nn.Module):
         self.w_v = nn.Linear(
             in_features=self.embed_dim, out_features=self.embed_dim, bias=False
         )
-
-        self.attn_drop = nn.Dropout(dropout)
-
         self.w_o = nn.Sequential(
             nn.Linear(self.embed_dim, self.embed_dim), nn.Dropout(dropout)
         )
