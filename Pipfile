@@ -3,10 +3,15 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[[source]]
+url = "https://download.pytorch.org/whl/cu117"
+verify_ssl = false
+name = "pytorch"
+
 [packages]
-torch = {file = "https://download.pytorch.org/whl/cu116/torch-1.12.1%2Bcu116-cp310-cp310-linux_x86_64.whl"}
-torchvision = { file = "https://download.pytorch.org/whl/cu116/torchvision-0.13.1%2Bcu116-cp310-cp310-linux_x86_64.whl"}
 tqdm = "*"
+torch = "*"
+torchvision = "*"
 
 [dev-packages]
 pysen = "*"
